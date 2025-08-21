@@ -2,6 +2,24 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import signal
 
+def continuous_plotter(t, x, title="Señal Continua"):
+    plt.figure(figsize=(10, 6))
+    plt.plot(t, x, 'b-', linewidth=2)
+    plt.title(title)
+    plt.xlabel('Tiempo (s)')
+    plt.ylabel('Amplitud')
+    plt.grid(True, alpha=0.3)
+    plt.show()
+
+def discrete_plotter(n, x, title="Señal Discreta"):
+    plt.figure(figsize=(10, 6))
+    plt.stem(n, x, linefmt='r-', markerfmt='ro', basefmt=' ')
+    plt.title(title)
+    plt.xlabel('Muestra (n)')
+    plt.ylabel('Amplitud')
+    plt.grid(True, alpha=0.3)
+    plt.show()
+
 def onda_senoidal():
     Ts = 0.05
     x = np.linspace(-1, 5, 1000)
